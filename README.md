@@ -7,7 +7,7 @@ Paper: [AshPipe: Asynchronous Hybrid Pipeline Parallel for DNN Training](https:/
 
 ## Setup
 
-```
+```bash
 pip install -r requirements.txt
 
 cd optimizer
@@ -21,26 +21,26 @@ g++ -O3 -shared -fPIC `python3 -m pybind11 --includes` cppoptimizer.cpp -o cppop
 To run a demo, run the following commands:
 
 [from `./profiler/image_classification`]
-```
+```bash
 ./run_profiler.sh
 ```
 
 [from `./optimizer`]
-```
+```bash
 ./run_optimizer.sh
 ./run_converter.sh
 ```
 
 [from `./runtime`]
 On node 0:
-```
+```bash
 python3 main.py --data_dir <path to dataset> -m models.alexnet --config_path models/alexnet/hybrid_conf.json -o models/alexnet/optim_config.json --master_addr <IP address of node 0> --rank 0 --local_rank 0
 python3 main.py --data_dir <path to dataset> -m models.alexnet --config_path models/alexnet/hybrid_conf.json -o models/alexnet/optim_config.json --master_addr <IP address of node 0> --rank 1 --local_rank 1
 python3 main.py --data_dir <path to dataset> -m models.alexnet --config_path models/alexnet/hybrid_conf.json -o models/alexnet/optim_config.json --master_addr <IP address of node 0> --rank 2 --local_rank 2
 python3 main.py --data_dir <path to dataset> -m models.alexnet --config_path models/alexnet/hybrid_conf.json -o models/alexnet/optim_config.json --master_addr <IP address of node 0> --rank 3 --local_rank 3
 ```
 On node 1:
-```
+```bash
 python3 main.py --data_dir <path to dataset> -m models.alexnet --config_path models/alexnet/hybrid_conf.json -o models/alexnet/optim_config.json --master_addr <IP address of node 0> --rank 4 --local_rank 0
 python3 main.py --data_dir <path to dataset> -m models.alexnet --config_path models/alexnet/hybrid_conf.json -o models/alexnet/optim_config.json --master_addr <IP address of node 0> --rank 5 --local_rank 1
 python3 main.py --data_dir <path to dataset> -m models.alexnet --config_path models/alexnet/hybrid_conf.json -o models/alexnet/optim_config.json --master_addr <IP address of node 0> --rank 6 --local_rank 2
@@ -63,4 +63,4 @@ AshPipe is published in HPCAsia2024. To cite our work:
 
 ## License
 
-Licensed under the (MIT license)[LICENSE].
+Licensed under the [MIT license](LICENSE).

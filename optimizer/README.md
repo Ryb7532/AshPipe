@@ -2,13 +2,13 @@
 
 ## Setup
 
-```
+```bash
 g++ -O3 -shared -fPIC `python3 -m pybind11 --includes` cppoptimizer.cpp -o cppoptimizer`python3-config --extension-suffix`
 ```
 
 ## Run model partitioning algorithm
 
-```
+```bash
 ./run_optimizer.sh
 ```
 
@@ -17,7 +17,7 @@ g++ -O3 -shared -fPIC `python3 -m pybind11 --includes` cppoptimizer.cpp -o cppop
 
 ## Create hybrid parallel model
 
-```
+```bash
 ./run_converter.sh
 ```
 and then, specify the number of workers in each stage.
