@@ -1,0 +1,13 @@
+{
+	"lr_policy": "step",
+	"lr_warmup": 0,
+
+	"func": "SGD",
+	"args": {
+		"lr": 0.1,
+		"momentum": 0,
+		"dampening": 0,
+		"weight_decay": 0,
+		"nesterov": false
+	}
+}

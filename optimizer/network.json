@@ -1,0 +1,5 @@
+{
+  "allreduce_bandwidths": [300000000000, 25000000000],
+  "p2p_bandwidths":       [300000000000, 25000000000],
+  "fully_connect": [true, false]
+}
